@@ -13,6 +13,7 @@
 :root {
   /* colors */
   --background-color: white;
+  --body-background-color: cyan;
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
@@ -73,7 +74,7 @@
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
+  background-color: var(--body-background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
@@ -110,6 +111,8 @@ h6 {
   font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
+  color: #Ff00ff
+  ;
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
