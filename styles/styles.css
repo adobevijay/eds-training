@@ -239,7 +239,9 @@ main > .section > div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
+  
 }
+
 
 main > .section:first-of-type {
   margin-top: 0;
@@ -257,4 +259,10 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+main .section.blue{
+  background-color: blue;
+}
+main .section.white-text{
+  color: white;
 }
