@@ -1,0 +1,18 @@
+.pagination-button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+}
+
+/* Style for selected (active) pagination button */
+.pagination-button.selected {
+    background-color: black;
+    color: white;
+}

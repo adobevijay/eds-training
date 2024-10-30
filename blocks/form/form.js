@@ -44,6 +44,7 @@ function generatePayload(form) {
 }
 
 async function handleSubmit(form) {
+  console.log('form',form)
   if (form.getAttribute('data-submitting') === 'true') return;
 
   const submit = form.querySelector('button[type="submit"]');

@@ -52,6 +52,8 @@ const createHeading = (fd) => {
 };
 
 const createPlaintext = (fd) => {
+  console.log('fd',fd);
+  
   const fieldWrapper = createFieldWrapper(fd);
 
   const text = document.createElement('p');
