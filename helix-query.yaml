@@ -1,30 +1,49 @@
  version: 1
  indices:
- site:
-   include:
+  site:
+    include:
     -'**'
-   exlcude:
+    exlcude:
      -'**/fr/**'
-   target: /query-index
-   properties:
-    description:
-    category:
-      select: head > meta [name="category"]
-      value: |
-        attribute(el, 'content')
-    topics:
-      select: head > meta [name="topics"]
-      value: | 
-        attribute(el, 'content')
-    lastModified:
-      select: none 
-      value: | 
-        parseTimestamp(headers['last-modified'],'ddd, DD MMM YYYY hh:mm:ss GMT')
-    blocks:
-       select: none 
-       value:  |
-        headers ['blocks']
-    pagetitle:
-      selectFirst: h1 
-      value: |
+    target: /query-index
+    properties:
+      author:
+        select: head > meta[name="author"]
+        value:  |
+          attribute(el, 'content')
+      title:  
+        select: head > meta[property="og:title"]
+        value:  |
+          attribute(el, 'content')
+      date:
+        select: head > meta[name="publication-date"]
+        value:  |
+          dateValue(attribute(el, 'content'),MM-DD-YYYY)
+      image:
+        select: head > meta[property="og:image"]
+        value:  |
+          match(attribute(el, 'content'),'https:\/\/[^/]+(\/.*)') 
+      description:
+        select: head > meta[name="description"]
+        value:  |
+          attribute(el, 'content') 
+      category:
+        select: head > meta [name="category"]
+        value: |
+          attribute(el, 'content')
+      topics:
+        select: head > meta [name="topics"]
+        value: | 
+          attribute(el, 'content')
+      lastModified:
+        select: none 
+        value: | 
+          parseTimestamp(headers['last-modified'],'ddd, DD MMM YYYY hh:mm:ss GMT')
+      blocks:
+        select: none 
+        value:  |
+          headers ['blocks']
+      pagetitle:
+        selectFirst: h1 
+        value: |
         textContent(el)
