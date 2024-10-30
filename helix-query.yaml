@@ -1,5 +1,11 @@
+ version: 1
  indices:
  site:
+   include:
+    -'**'
+   exlcude:
+     -'**/fr/**'
+   target: /query-index
    properties:
     description:
     category:
